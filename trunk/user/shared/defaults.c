@@ -198,7 +198,7 @@ struct nvram_pair router_defaults[] = {
 	{ "wl_radio_x", "1" },			/* Enable (1) or disable (0) radio */
 	{ "wl_IgmpSnEnable", "1" },
 	{ "wl_TxPower", "100" },
-	{ "wl_TxBurst", "1" },
+	{ "wl_TxBurst", "0" },
 	{ "wl_PktAggregate", "1" },
 	{ "wl_APSDCapable", "0" },
 	{ "wl_HT_OpMode", "0" },
@@ -230,13 +230,13 @@ struct nvram_pair router_defaults[] = {
 #if defined (USE_WID_5G) && (USE_WID_5G==7615 || USE_WID_5G==7915)
 	{ "wl_HT_AMSDU", "1" },
 	{ "wl_HT_BAWinSize", "256" },
-	{ "wl_mumimo", "0" },
+	{ "wl_mumimo", "1" },
 #else
 	{ "wl_HT_AMSDU", "0" },
 	{ "wl_HT_BAWinSize", "64" },
 #endif
 	{ "wl_HT_80211KV", "1" },
-	{ "wl_HT_80211R", "0" },
+	{ "wl_HT_80211R", "1" },
 	{ "wl_HT_MpduDensity", "5" },
 	{ "wl_HT_AutoBA", "1" },
 	{ "wl_VgaClamp", "0" },
@@ -294,10 +294,10 @@ struct nvram_pair router_defaults[] = {
 	{ "rt_HT_EXTCHA", "1" },
 	{ "rt_HT_OpMode", "0" },
 	{ "rt_wme", "1" },
-	{ "rt_wme_no_ack", "off" },
+	{ "rt_wme_no_ack", "on" },
 	{ "rt_IgmpSnEnable", "1" },
 	{ "rt_TxPower", "100" },
-	{ "rt_TxBurst", "1" },
+	{ "rt_TxBurst", "0" },
 	{ "rt_PktAggregate", "1" },
 	{ "rt_APSDCapable", "0" },
 	{ "rt_auth_mode", "psk" },
@@ -332,10 +332,10 @@ struct nvram_pair router_defaults[] = {
 	{ "rt_preamble", "1" },
 	{ "rt_greenap", "0" },
 	{ "rt_HT_RDG", "0" },
-	{ "rt_HT_AMSDU", "0" },
+	{ "rt_HT_AMSDU", "1" },
 	{ "rt_HT_MpduDensity", "5" },
 	{ "rt_HT_80211KV", "1" },
-	{ "rt_HT_80211R", "0" },
+	{ "rt_HT_80211R", "1" },
 #if defined (USE_WID_2G) && (USE_WID_2G==7615 || USE_WID_2G==7915)
 	{ "rt_HT_BAWinSize", "256" },
 	{ "rt_ldpc", "1" },
@@ -814,8 +814,8 @@ struct nvram_pair router_defaults[] = {
 	{ "sqm_up_speed", "0" },
 	{ "sqm_debug_log", "0" },
 	{ "sqm_log_level", "5" },
-	{ "sqm_qdisc", "fq_codel" },
-	{ "sqm_script", "simple" },
+	{ "sqm_qdisc", "cake" },
+	{ "sqm_script", "piece_of_cake" },
 #endif
 
 #if defined(APP_SMARTDNS)
@@ -1053,10 +1053,10 @@ struct nvram_pair router_defaults[] = {
 #endif
 	{ "fw_syn_cook", "0" },
 	{ "fw_mac_drop", "0" },
-	{ "nf_nat_type", "2" },
+	{ "nf_nat_type", "1" },
 	{ "nf_nat_loop", "1" },
 #if (BOARD_RAM_SIZE > 128)
-	{ "nf_max_conn", "32768" },
+	{ "nf_max_conn", "16384" },
 #elif (BOARD_RAM_SIZE > 32)
 	{ "nf_max_conn", "16384" },
 #else
